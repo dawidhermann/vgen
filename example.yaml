@@ -1,0 +1,15 @@
+objectName: user
+amount: 100
+fields:
+  - name:
+    type: string
+    template: user-${%d(5)}
+  - email:
+    type: string
+    template: ${%s(2,10)}@example.com
+  - roles:
+    type: list(string)
+    template: ${%genFrom(ADMIN|USER|SUPER_ADMIN, 2)}
+  - enabled:
+    type: boolean
+    template: ${%genFrom(true|false, 1)}
